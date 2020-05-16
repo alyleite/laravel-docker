@@ -5,10 +5,8 @@ services:
   app:
     build: .
     container_name: app
-    image: alyleite/laravel
     volumes:
-      - /e/docker:/var/www # docker toolbox
-#      -  .:/var/www # docker desktop
+      -  .:/var/www
     networks:
       - app-network
 
@@ -20,8 +18,7 @@ services:
     ports:
       - "8000:80"
     volumes:
-      - /e/docker:/var/www # docker toolbox
-#      -  .:/var/www # docker desktop
+      -  .:/var/www
     networks:
       - app-network
     depends_on:
@@ -37,8 +34,7 @@ services:
     ports:
       - "3306:3306"
     volumes:
-      - /e/docker/.docker/dbdata:/var/lib/mysql # docker toolbox
-#      -  ./.docker/dbdata:/var/lib/mysql # docker desktop
+      -  ./.docker/dbdata:/var/lib/mysql
     environment:
       - MYSQL_DATABASE=laravel
       - MYSQL_ROOT_PASSWORD=root

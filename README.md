@@ -78,14 +78,5 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
 
-## Docker
-
-Foi utilizado o Docker toolbox neste projeto. Caso esteja utilizando o Docker Desktop,
-descomente os volumes no arquivo docker-compose.yaml
-
-Se utilizar o Docker Toolbox, crie uma pasta compartilhada no Virtualbox para utilizar como volume. 
-Clique [aqui](https://medium.com/@Charles_Stover/fixing-volumes-in-docker-toolbox-4ad5ace0e572) para visualizar como.  
-
-
-### Docker Hub
-[Dockerhub](https://hub.docker.com/r/alyleite/laravel)
+## Docker Hub
+[docker-laravel](https://hub.docker.com/r/alyleite/laravel_app)
