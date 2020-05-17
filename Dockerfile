@@ -6,12 +6,15 @@ WORKDIR /var/www
 RUN rm -rf /var/www/html
 
 COPY . /var/www
+COPY .env.example .env
 
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
-RUN composer install && cp .env.example .env && php artisan key:generate && php artisan config:cache
+RUN composer install  && php artisan key:generate && php artisan config:cache
 
 RUN ln -s public html
+
+RUN chown -R www-data:www-data /var/www
 
 EXPOSE 9000
 ENTRYPOINT ["php-fpm"]
